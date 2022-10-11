@@ -11,6 +11,7 @@
                     <tr>
                         <th>Название параметра</th>
                         <th>Название параметра</th>
+                        <th>Функционал</th>
                     </tr>
 
                     @each('telegramSetting.row', $telegramSetting, 'setting', 'telegramSetting.rowEmpty')
