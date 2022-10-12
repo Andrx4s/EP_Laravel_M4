@@ -5,7 +5,7 @@
            id="input{{ $input['name'] }}"
            name="{{ $input['name'] }}"
            aria-describedby="input{{$input['name']}}Validation"
-           value="{{old($input['name'], '')}}">
+           value="{{old($input['name'], $input['default'] ?? '')}}">
     @error($input['name'])
         <div id="inputLoginValidation"
              class="invalid-feedback">

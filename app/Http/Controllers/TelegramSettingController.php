@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditParametrsValidationRequest;
+use App\Http\Requests\ParametrsValidationRequest;
 use App\Models\TelegramSetting;
 use Illuminate\Http\Request;
 
@@ -33,33 +35,34 @@ class TelegramSettingController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(ParametrsValidationRequest $request)
     {
-        //
+        TelegramSetting::create($request->validated());
+        return redirect()->route('telegram-setting.index')->with(['success' => true]);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\TelegramSetting  $telegramSetting
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(TelegramSetting $telegramSetting)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\TelegramSetting  $telegramSetting
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(TelegramSetting $telegramSetting)
     {
-        //
+        return view('telegramSetting.edit', compact('telegramSetting'));
     }
 
     /**
@@ -67,11 +70,12 @@ class TelegramSettingController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\TelegramSetting  $telegramSetting
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, TelegramSetting $telegramSetting)
+    public function update(EditParametrsValidationRequest $request, TelegramSetting $telegramSetting)
     {
-        //
+        $telegramSetting->update($request->validated());
+        return back()->with(['success' => true]);
     }
 
     /**
