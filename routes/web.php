@@ -21,6 +21,7 @@ Route::view('/','main')->name('main');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'loginPost'])->name('login_post');
 
+// Промежуточная проверка на авторизацию пользователя
 Route::middleware('auth')->group(function (){
     Route::resource('telegram-setting', TelegramSettingController::class)->parameters(['telegram-setting' => 'telegramSetting']);
 });

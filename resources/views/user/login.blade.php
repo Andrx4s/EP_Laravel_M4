@@ -1,12 +1,15 @@
 @extends('welcome')
 
 @section('title', 'Авторизация')
-
+{{--Секция с авторизацией--}}
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col"></div>
             <div class="col-md-6 col-12">
+                @if(session()->has('auth'))
+                    <div class="alert alert-danger mt-2">Не правильный пароль или логин</div>
+                @endif
                 <form method="POST" action="{{route('login_post')}}">
                     @csrf
                     <div class="mb-3">

@@ -11,7 +11,7 @@ class TelegramSettingController extends Controller
 {
     /**
      *
-     * Display a listing of the resource.
+     * Вызов страницы со всмеми настройками
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
@@ -22,7 +22,7 @@ class TelegramSettingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Вызова страницы для создания найстроки
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
@@ -32,7 +32,7 @@ class TelegramSettingController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Функция для создания настройки
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
@@ -55,7 +55,7 @@ class TelegramSettingController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Вызова страницы для редактировая найстроки
      *
      * @param  \App\Models\TelegramSetting  $telegramSetting
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -66,7 +66,7 @@ class TelegramSettingController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Функция для редактирования настройки
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\TelegramSetting  $telegramSetting

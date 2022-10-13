@@ -1,3 +1,4 @@
+{{--Шаблон для создания и редактирования параметра--}}
 <div class="mb-3">
     <label for="input{{ $input['name'] }}" class="form-label">{{ $input['label'] }}</label>
     <input type="text"

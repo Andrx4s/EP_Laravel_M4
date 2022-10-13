@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('title', 'создание настроек')
-
+{{--Секция  с созданием параметра--}}
 @section('content')
     <div class="container mt-2">
         <div class="row">

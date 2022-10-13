@@ -12,5 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    /**
+     *
+     * Защита колонки id для изменения
+     *
+     * @var string[]
+     */
     protected $guarded = ['id'];
 }

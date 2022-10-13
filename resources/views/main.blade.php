@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('title', 'Главная страница')
-
+{{--Секция с главной страницей--}}
 @section('content')
     <div class="container">
         <div class="row">

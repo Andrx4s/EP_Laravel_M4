@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class EditParametrsValidationRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Определаят авторизован ли пользователь для выполнения запроса
      *
      * @return bool
      */
@@ -17,7 +17,7 @@ class EditParametrsValidationRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Правила проверки для аттрибутов
      *
      * @return array<string, mixed>
      */
@@ -27,5 +27,20 @@ class EditParametrsValidationRequest extends FormRequest
             'name' => 'required|unique:telegram_settings,name' . $this->route()->parameter('telegramSetting', 0),
             'val' => 'required'
         ];
+    }
+
+    /**
+     *
+     * Сообщение ошибки на русском языке для аттрибутов
+     *
+     * @return array|string[]
+     */
+    public function messages()
+    {
+        return parent::messages() + [
+                'name.required' => 'Поле название настройки обязательно для заполнения',
+                'name.unique' => 'Название настройки :input уже существует',
+                'val.required' => 'Поле значение параметра обязательно для заполнения',
+            ];
     }
 }

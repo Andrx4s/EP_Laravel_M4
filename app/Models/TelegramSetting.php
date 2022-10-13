@@ -9,5 +9,11 @@ class TelegramSetting extends Model
 {
     use HasFactory;
 
+    /**
+     *
+     * Защита колонки id для изменения
+     *
+     * @var string[]
+     */
     protected $guarded = ['id'];
 }
