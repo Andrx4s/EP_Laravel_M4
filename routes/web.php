@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TelegramCommandController;
 use App\Http\Controllers\TelegramSettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,5 @@ Route::post('/login', [UserController::class, 'loginPost'])->name('login_post');
 // Промежуточная проверка на авторизацию пользователя
 Route::middleware('auth')->group(function (){
     Route::resource('telegram-setting', TelegramSettingController::class)->parameters(['telegram-setting' => 'telegramSetting']);
+    Route::resource('telegram-command', TelegramCommandController::class)->parameters(['telegram-command' => 'telegramCommand']);
 });

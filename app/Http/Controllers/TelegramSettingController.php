@@ -44,14 +44,14 @@ class TelegramSettingController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Перекидывание от куда пришел пользователь
      *
      * @param  \App\Models\TelegramSetting  $telegramSetting
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function show(TelegramSetting $telegramSetting)
     {
-
+        return back();
     }
 
     /**
@@ -79,13 +79,14 @@ class TelegramSettingController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Удаляем элемент
      *
      * @param  \App\Models\TelegramSetting  $telegramSetting
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(TelegramSetting $telegramSetting)
     {
-        //
+       $telegramSetting->delete();
+       return back()->with(['successError' => true]);
     }
 }

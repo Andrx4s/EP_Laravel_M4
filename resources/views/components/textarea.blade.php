@@ -4,15 +4,14 @@
            class="form-label">
         {{ $input['label'] }}
     </label>
-    <input type="text"
+    <textarea
            class="form-control @error($input['name']) is-invalid @enderror"
            id="input{{ $input['name'] }}"
            name="{{ $input['name'] }}"
-           aria-describedby="input{{$input['name']}}Validation"
-           value="{{old($input['name'], $input['default'] ?? '')}}">
+           aria-describedby="input{{$input['name']}}Validation">{{old($input['name'], $input['default'] ?? '')}}</textarea>
     @error($input['name'])
-        <div id="inputLoginValidation"
-             class="invalid-feedback">
-            {{$message}} </div>
+    <div id="inputLoginValidation"
+         class="invalid-feedback">
+        {{$message}} </div>
     @enderror
 </div>
