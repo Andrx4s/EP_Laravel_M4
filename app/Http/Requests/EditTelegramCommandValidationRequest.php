@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 class EditTelegramCommandValidationRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Определаят авторизован ли пользователь для выполнения запроса
      *
      * @return bool
      */
@@ -18,7 +18,7 @@ class EditTelegramCommandValidationRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Правила проверки для аттрибутов
      *
      * @return array<string, mixed>
      */
@@ -32,5 +32,19 @@ class EditTelegramCommandValidationRequest extends FormRequest
             ],
             'context' => 'required'
         ];
+    }
+
+    /**
+     *
+     * Сообщение ошибки на русском языке для аттрибутов
+     *
+     * @return array|string[]
+     */
+    public function messages()
+    {
+        return parent::messages() + [
+                'command.required' => 'Поле название команды обязательно для заполнения',
+                'context.required' => 'Поле текст пользователя обязательно для заполнения',
+            ];
     }
 }

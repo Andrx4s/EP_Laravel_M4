@@ -45,7 +45,6 @@ class EditParametrsValidationRequest extends FormRequest
     {
         return parent::messages() + [
                 'name.required' => 'Поле название настройки обязательно для заполнения',
-                'name.unique' => 'Название настройки :input уже существует',
                 'val.required' => 'Поле значение параметра обязательно для заполнения',
             ];
     }

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class TelegramCommandController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Вызов страницы со всеми командами
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
@@ -21,7 +21,7 @@ class TelegramCommandController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Вызов шаблона создания команды
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
@@ -31,7 +31,7 @@ class TelegramCommandController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Функция создания команды
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
@@ -43,7 +43,7 @@ class TelegramCommandController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Вызов страницы с просмотром
      *
      * @param  \App\Models\TelegramCommand  $telegramCommand
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -54,7 +54,7 @@ class TelegramCommandController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Вызов страницы с редактированием команды
      *
      * @param  \App\Models\TelegramCommand  $telegramCommand
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -65,7 +65,7 @@ class TelegramCommandController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Функция редактирования команды
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\TelegramCommand  $telegramCommand
@@ -78,7 +78,7 @@ class TelegramCommandController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Функция удаления команды
      *
      * @param  \App\Models\TelegramCommand  $telegramCommand
      * @return \Illuminate\Http\RedirectResponse

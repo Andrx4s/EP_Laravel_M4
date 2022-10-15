@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('title', 'просмотр единичной записи команды')
-
+{{--Секция для просмотра команды--}}
 @section('content')
     <div class="container">
         <div class="row">

@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('title', 'страница всех команд')
-
+{{--Секция с командами telegram бота--}}
 @section('content')
     <div class="container">
         <div class="row">

@@ -2,6 +2,7 @@
 
 @section('title', 'редактирование команды')
 
+{{--Секция для редактировая команд--}}
 @section('content')
     <div class="container">
         <div class="row">
